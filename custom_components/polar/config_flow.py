@@ -23,7 +23,7 @@ _LOGGER = logging.getLogger(__name__)
 has_oauth_callback = False
 
 def setup_oauth_callback(hass):
-    callback_url = f"{hass.config.api.base_url}{AUTH_CALLBACK_PATH}"
+    callback_url = f"{hass.config.external_url}{AUTH_CALLBACK_PATH}"
 
     if not has_oauth_callback:
         hass.http.register_view(PolarAuthCallbackView())
